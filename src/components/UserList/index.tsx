@@ -10,20 +10,22 @@ const UserList: React.FC<UserListProps> = ({ title, users }) => {
         {title}
       </AccordionSummary>
       <AccordionDetails>
-        <ul>
+        <>
           {users.map((user) => (
-            <li key={user.id}>
-              <img
-                src={user.imgUrl || 'https://via.placeholder.com/32'}
-                alt={user.name}
-              />
-              <div>
+            <div className="user-card" key={user.id}>
+              <div className="user-img">
+                <img
+                  src={user.imgUrl}
+                  alt={user.name}
+                />
+              </div>
+              <div className="user-info">
                 <div>{user.name}</div>
                 <div>{user.email}</div>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </>
       </AccordionDetails>
     </Accordion>
   );
