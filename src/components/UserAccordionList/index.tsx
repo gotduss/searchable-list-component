@@ -1,12 +1,15 @@
 import React from 'react';
-import User from '../User';
+import UserList from '../UserList';
 import { UserAccordionListProps } from './index.types';
 
-const UserAccordionList: React.FC<UserAccordionListProps> = ({ attended, absent }) => {
+const UserAccordionList: React.FC<UserAccordionListProps> = ({ users }) => {
+  const attended = users.filter(user => user.status === 'attended');
+  const absent = users.filter(user => user.status === 'absent');
+
   return (
     <div className="accordion-wrapper">
-      <User title="Attended" users={attended} />
-      <User title="Absent" users={absent} />
+      <UserList title="Attended" users={attended} />
+      <UserList title="Absent" users={absent} />
     </div>
   );
 }

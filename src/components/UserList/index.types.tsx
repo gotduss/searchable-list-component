@@ -3,9 +3,10 @@ export interface User {
   name: string;
   email: string;
   imgUrl?: string;
+  status: 'attended' | 'absent';
 }
 
-export interface UserAccordionProps {
+export interface UserListProps {
   title: string;
   users: User[];
 }

@@ -1,7 +1,10 @@
+import UserAccordionList from "../UserAccordionList";
+import { users } from "../../data/users";
+
 const SearchableList = () => {
   return (
     <div className="App">
-      <p>Here is where the main component will be added.</p>
+      <UserAccordionList users={users} />
     </div>
   );
 }

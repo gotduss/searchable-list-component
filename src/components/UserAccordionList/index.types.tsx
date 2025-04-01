@@ -1,6 +1,5 @@
-import { User } from "../User/index.types";
+import { User } from "../UserList/index.types";
 
 export interface UserAccordionListProps {
-  attended: User[];
-  absent: User[];
+  users: User[];
 }

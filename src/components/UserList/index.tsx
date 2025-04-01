@@ -1,9 +1,9 @@
 import React from "react";
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { UserAccordionProps } from "./index.types";
+import { UserListProps } from "./index.types";
 
-const User: React.FC<UserAccordionProps> = ({ title, users }) => {
+const UserList: React.FC<UserListProps> = ({ title, users }) => {
   return (
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -29,4 +29,4 @@ const User: React.FC<UserAccordionProps> = ({ title, users }) => {
   );
 }
 
-export default User;
+export default UserList;
