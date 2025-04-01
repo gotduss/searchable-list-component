@@ -19,7 +19,7 @@ const mockUsers: User[] = [
   },
 ];
 
-describe('UserAccordion', () => {
+describe('UserList', () => {
   it('renders the accordion title', () => {
     render(<UserList title="Attended" users={mockUsers} />);
     expect(screen.getByText(/Attended/i)).toBeInTheDocument();
