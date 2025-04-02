@@ -7,7 +7,7 @@
 - Open the Command Line Interface (CLI)
 - Browse to the directory you just cloned using for example the following command `cd dir1/dir2/app` in the CLI on an Apple machine.
 - Make sure that you are using Node version 22 (this is the version I used on my machine). I use Node Version Manager (nvm) so I can switch between Node version easily.
-- Once you are at the root level of the app, run the following command `npm install`. This command will install all the necessay node packages necessary to run the app.
+- Once you are at the root level of the app, run the following command `npm install`. This command will install all the necessay node packages to run the app.
 
 ## Available Scripts
 
