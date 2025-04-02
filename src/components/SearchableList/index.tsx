@@ -1,6 +1,8 @@
+// Imports
 import UserAccordionList from "../UserAccordionList";
 import { users } from "../../data/users";
 
+// SearchableList component
 const SearchableList = () => {
   return (
     <div className="App">

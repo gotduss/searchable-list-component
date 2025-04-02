@@ -1,10 +1,16 @@
+// Imports
 import React from "react";
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { UserListProps } from "./index.types";
 import './index.styles.css';
 
-const UserList: React.FC<UserListProps> = ({ title, users, displayEmail = true }) => {
+// UserList component
+const UserList: React.FC<UserListProps> = ({
+  title,
+  users,
+  displayEmail = true
+}) => {
   return (
     <Accordion
       disableGutters={true}

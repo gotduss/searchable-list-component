@@ -1,10 +1,13 @@
+// Imports
 import React, { ChangeEvent } from 'react';
 import { FilterProps } from './index.types';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
 
+// Filter component
 const Filter: React.FC<FilterProps> = ({ value, onChange }) => {
+  //handles the Textfield event change when filtering by name
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
   };

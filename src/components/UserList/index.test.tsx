@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import UserList from '.';
 import { User } from './index.types';
 
+// Mock the users data
 const mockUsers: User[] = [
   {
     id: 1,
