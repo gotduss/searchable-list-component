@@ -9,4 +9,5 @@ export interface User {
 export interface UserListProps {
   title: string;
   users: User[];
+  displayEmail?: boolean;
 }

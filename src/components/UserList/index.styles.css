@@ -7,6 +7,7 @@
 .user-img {
   flex: 0 0 36px;
   max-width: 36px;
+  height: 36px;
 }
 
 .user-img img {

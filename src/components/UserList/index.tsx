@@ -4,7 +4,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { UserListProps } from "./index.types";
 import './index.styles.css';
 
-const UserList: React.FC<UserListProps> = ({ title, users }) => {
+const UserList: React.FC<UserListProps> = ({ title, users, displayEmail = true }) => {
   return (
     <Accordion
       disableGutters={true}
@@ -43,7 +43,9 @@ const UserList: React.FC<UserListProps> = ({ title, users }) => {
               </div>
               <div className="user-info">
                 <p className="user-name">{user.name}</p>
-                <p className="user-email">{user.email}</p>
+                {displayEmail &&
+                  <p className="user-email">{user.email}</p>
+                }
               </div>
             </div>
           ))}

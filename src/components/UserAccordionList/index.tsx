@@ -3,7 +3,12 @@ import UserList from '../UserList';
 import Filter from '../Filter';
 import { UserAccordionListProps } from './index.types';
 
-const UserAccordionList: React.FC<UserAccordionListProps> = ({ users }) => {
+const UserAccordionList: React.FC<UserAccordionListProps> = ({
+  users,
+  attendedTitle = 'Attended',
+  absentTitle = 'Absent',
+  displayEmail = false,
+}) => {
   const [filter, setFilter] = useState('');
 
   const filteredUsers = users.filter(
@@ -17,8 +22,8 @@ const UserAccordionList: React.FC<UserAccordionListProps> = ({ users }) => {
   return (
     <div className="accordion-wrapper">
       <Filter value={filter} onChange={setFilter} />
-      <UserList title="Attended" users={attended} />
-      <UserList title="Absent" users={absent} />
+      <UserList title={attendedTitle} users={attended} displayEmail={displayEmail} />
+      <UserList title={absentTitle} users={absent} displayEmail={displayEmail} />
     </div>
   );
 }
