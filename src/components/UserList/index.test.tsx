@@ -21,18 +21,18 @@ const mockUsers: User[] = [
 
 describe('UserList', () => {
   it('renders the accordion title', () => {
-    render(<UserList title="Attended" users={mockUsers} />);
+    render(<UserList title="Attended" users={mockUsers} displayEmail={false} />);
     expect(screen.getByText(/Attended/i)).toBeInTheDocument();
   });
 
   it('renders all user names', () => {
-    render(<UserList title="Attended" users={mockUsers} />);
+    render(<UserList title="Attended" users={mockUsers} displayEmail={true} />);
     expect(screen.getByText(/Dianne Russell/i)).toBeInTheDocument();
     expect(screen.getByText(/Ronald Richards/i)).toBeInTheDocument();
   });
 
   it('renders user emails', () => {
-    render(<UserList title="Attended" users={mockUsers} />);
+    render(<UserList title="Attended" users={mockUsers} displayEmail={true} />);
     expect(screen.getByText(/dianne@example.com/i)).toBeInTheDocument();
     expect(screen.getByText(/ronald@example.com/i)).toBeInTheDocument();
   });

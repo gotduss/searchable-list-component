@@ -17,8 +17,15 @@ This component displays a filterable list of users divided into two accordions w
 
 ### Importing the component
 Use the following import if you are inside the components directory
+
 \`\`\`
 import UserAccordionList from "../UserAccordionList";
+\`\`\`
+
+Use the following import if you are in a directory that is at the component's level such as stories
+
+\`\`\`
+import UserAccordionList from '../components/UserAccordionList';
 \`\`\`
 
 ### Usage of the component with its props
@@ -30,6 +37,7 @@ import UserAccordionList from "../UserAccordionList";
   displayEmail={false}
 />
 \`\`\`
+### Available props
 The component accepts the following props:
 - \`users\`: array of user objects
 - \`attendedTitle\`: title for the attended accordion (default: "Attended")

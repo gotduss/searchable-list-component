@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+## Clone the repo on your local environment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`git clone https://github.com/gotduss/searchable-list-component.git`
+
+## Get the React app setup on your local environment
+
+- Open the Command Line Interface (CLI)
+- Browse to the directory you just cloned using for example the following command `cd dir1/dir2/app` in the CLI.
+- Make sure that you are using Node version 22 (this is the version I used on my machine). I use Node Version Manager (nvm) so I can switch between Node version easily.
+- Once you are at the root level of the app, run the following command `npm install`. This command will install all the necessay node packages necessary to run the app.
 
 ## Available Scripts
 
@@ -39,8 +46,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## `npm run storybook`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Running the storybook command will start the local development server, output the address for you, and automatically open the address in a new browser tab where a welcome screen greets you.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once the page comes up in the browser, you should see a sidebar on the left with a menu. It should display the UserAccordionList component with the Docs and the different component's variations.
