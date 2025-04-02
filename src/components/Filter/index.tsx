@@ -26,6 +26,16 @@ const Filter: React.FC<FilterProps> = ({ value, onChange }) => {
             ),
           },
         }}
+        sx={{
+          '& fieldset': {
+            border: '0',
+            borderRadius: '0',
+          },
+          '&::placeholder': {
+            fontSize: '14px',
+            color: '#8E9AA5'
+          }
+        }}
       />
     </div>
   );

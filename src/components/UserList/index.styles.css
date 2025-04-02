@@ -1,0 +1,27 @@
+.user-card {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.user-img {
+  flex: 0 0 36px;
+  max-width: 36px;
+}
+
+.user-img img {
+  border-radius: 50%;
+}
+
+.user-info {
+  margin-left: 15px;
+}
+
+.user-name {
+  font-weight: 500;
+  color: #20374B;
+}
+
+.user-email {
+  color: #5A6D80;
+}
