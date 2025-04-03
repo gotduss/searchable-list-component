@@ -35,21 +35,37 @@ const mockUsers: User[] = [
 ];
 
 describe('UserAccordionList', () => {
-  it('renders two accordions with the expected titles', () => {
-    render(<UserAccordionList users={mockUsers} />);
-    expect(screen.getByText(/Attended/i)).toBeInTheDocument();
-    expect(screen.getByText(/Absent/i)).toBeInTheDocument();
+  it('displays two accordions with the correct titles', () => {
+    render(<UserAccordionList users={mockUsers} displayEmail={true} />);
+    expect(screen.queryByText('Attended')).toBeInTheDocument();
+    expect(screen.queryByText('Absent')).toBeInTheDocument();
   });
 
-  it('renders attended users in the Attended accordion', () => {
-    render(<UserAccordionList users={mockUsers} />);
-    expect(screen.getByText(/Dianne Russell/i)).toBeInTheDocument();
-    expect(screen.getByText(/Ronald Richards/i)).toBeInTheDocument();
+  it('displays attended users in the Attended accordion', () => {
+    render(<UserAccordionList users={mockUsers} displayEmail={false} />);
+    expect(screen.queryByText('Dianne Russell')).toBeInTheDocument();
+    expect(screen.queryByText('Ronald Richards')).toBeInTheDocument();
   });
 
-  it('renders absent users in the Absent accordion', () => {
-    render(<UserAccordionList users={mockUsers} />);
-    expect(screen.getByText(/Jenny Wilson/i)).toBeInTheDocument();
-    expect(screen.getByText(/Wade Warren/i)).toBeInTheDocument();
+  it('displays absent users in the Absent accordion', () => {
+    render(<UserAccordionList users={mockUsers} displayEmail={true} />);
+    expect(screen.queryByText('Jenny Wilson')).toBeInTheDocument();
+    expect(screen.queryByText('Wade Warren')).toBeInTheDocument();
+  });
+  
+  it('displays user emails when displayEmail is true', () => {
+    render(<UserAccordionList users={mockUsers} displayEmail={true} />);
+    expect(screen.queryByText('dianne@example.com')).toBeInTheDocument();
+    expect(screen.queryByText('ronald@example.com')).toBeInTheDocument();
+    expect(screen.queryByText('jenny@example.com')).toBeInTheDocument();
+    expect(screen.queryByText('wade@example.com')).toBeInTheDocument();
+  });
+
+  it('does not display user emails when displayEmail is false', () => {
+    render(<UserAccordionList users={mockUsers} displayEmail={false} />);
+    expect(screen.queryByText('dianne@example.com')).not.toBeInTheDocument();
+    expect(screen.queryByText('ronald@example.com')).not.toBeInTheDocument();
+    expect(screen.queryByText('jenny@example.com')).not.toBeInTheDocument();
+    expect(screen.queryByText('wade@example.com')).not.toBeInTheDocument();
   });
 });

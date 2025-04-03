@@ -9,7 +9,7 @@ const UserAccordionList: React.FC<UserAccordionListProps> = ({
   users,
   attendedTitle = 'Attended',
   absentTitle = 'Absent',
-  displayEmail = false,
+  displayEmail,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
 

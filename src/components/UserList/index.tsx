@@ -2,8 +2,8 @@
 import React from "react";
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import User from "../User";
 import { UserListProps } from "./index.types";
-import './index.styles.css';
 
 // UserList component
 const UserList: React.FC<UserListProps> = ({
@@ -38,24 +38,15 @@ const UserList: React.FC<UserListProps> = ({
           borderTop: '1px solid #E4E5E8'
         }}
       >
-        <>
-          {users.map((user) => (
-            <div className="user-card" key={user.id}>
-              <div className="user-img">
-                <img
-                  src={user.imgUrl}
-                  alt={user.name}
-                />
-              </div>
-              <div className="user-info">
-                <p className="user-name">{user.name}</p>
-                {displayEmail &&
-                  <p className="user-email">{user.email}</p>
-                }
-              </div>
-            </div>
-          ))}
-        </>
+        {users.map((user) => (
+          <User
+            key={user.id}
+            name={user.name}
+            email={user.email}
+            imgUrl={user.imgUrl}
+            displayEmail={displayEmail}
+          />
+        ))}
       </AccordionDetails>
     </Accordion>
   );

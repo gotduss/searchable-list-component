@@ -21,20 +21,26 @@ const mockUsers: User[] = [
 ];
 
 describe('UserList', () => {
-  it('renders the accordion title', () => {
+  it('displays the accordion title', () => {
     render(<UserList title="Attended" users={mockUsers} displayEmail={false} />);
-    expect(screen.getByText(/Attended/i)).toBeInTheDocument();
+    expect(screen.queryByText('Attended')).toBeInTheDocument();
   });
 
-  it('renders all user names', () => {
+  it('displays all user names', () => {
     render(<UserList title="Attended" users={mockUsers} displayEmail={true} />);
-    expect(screen.getByText(/Dianne Russell/i)).toBeInTheDocument();
-    expect(screen.getByText(/Ronald Richards/i)).toBeInTheDocument();
+    expect(screen.queryByText('Dianne Russell')).toBeInTheDocument();
+    expect(screen.queryByText('Ronald Richards')).toBeInTheDocument();
   });
 
-  it('renders user emails', () => {
+  it('displays user emails when displayEmail is true', () => {
     render(<UserList title="Attended" users={mockUsers} displayEmail={true} />);
-    expect(screen.getByText(/dianne@example.com/i)).toBeInTheDocument();
-    expect(screen.getByText(/ronald@example.com/i)).toBeInTheDocument();
+    expect(screen.queryByText('dianne@example.com')).toBeInTheDocument();
+    expect(screen.queryByText('ronald@example.com')).toBeInTheDocument();
+  });
+
+  it('does not display user emails when displayEmail is false', () => {
+    render(<UserList title="Attended" users={mockUsers} displayEmail={false} />);
+    expect(screen.queryByText('dianne@example.com')).not.toBeInTheDocument();
+    expect(screen.queryByText('ronald@example.com')).not.toBeInTheDocument();
   });
 });
